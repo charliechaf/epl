@@ -80,6 +80,8 @@ for (i in ListofURL){
   db$date = str_sub(
     str_split_fixed(string = url, pattern = "gamecode=", n= 2)[,2], 
     end = 8)
+  db$GoalsAllowed[1] = as.integer(as.character(db$Goals[2]))
+  db$GoalsAllowed[2] = as.integer(as.character(db$Goals[1]))
   db$Opponent[1] = db$team[2]
   db$Opponent[2] = db$team[1]
   db$GameID = paste0(db$team[1],'v',db$team[2],db$date[1])
